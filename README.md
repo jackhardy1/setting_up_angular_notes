@@ -19,8 +19,7 @@
 ```
 * `bower install angular --save` **-->** Installs angular using bower. Sets up the `bower_components` folder in `app`.
 
-* `touch .gitignore`
-  - Add this to the file:
+* `touch .gitignore` and add this to the file:
   ```
   mode_modules
   app/bower_components
@@ -45,8 +44,7 @@
 
 * `mkdir test`  
 
-* `touch test/protractor.conf.js`
-  - Add to the file:
+* `touch test/protractor.conf.js` and add to the file:
   ```Javascript
     exports.config = {
       seleniumAddress: 'http://localhost:4444/wd/hub',
@@ -61,8 +59,8 @@
 
 * `http-server` **-->** Starts http-server.
 
-##### Adding colour and format to the protractor tests:
-* `npm install jasmine-spec-reporter --save-dev` **-->** Installs colouring and better formatting for displaying the tests.  
+##### Adding colour and format to the *protractor* tests:
+* `npm install jasmine-spec-reporter --save-dev`
 
 * Add to `protractor.conf.js` inside the `exports.config {}` hash:
   ```Javascript
@@ -116,8 +114,8 @@
   };
   ```
 
-##### Adding colour and format to the karma tests:
-* `npm install karma-spec-reporter --save-dev` **-->** Installs colouring and better formatting for displaying the tests.  
+##### Adding colour and format to the *karma* tests:
+* `npm install karma-spec-reporter --save-dev`
 
 * Add to `karma.config.js` inside `config.set ({})` underneath `plugins`:
     ```Javascript
@@ -154,7 +152,8 @@
     };
   }
   ```
-* Update any feature tests to require the library:
+
+* Update any feature tests to require the library, *example taken from ToDo list*:
   ```Javascript
   var mock = require('protractor-http-mock');
 
