@@ -9,9 +9,11 @@
 
 * `bower init` **-->** Creates a `bower.json` file, choose all of the default settings.  
 
-* `mkdir app`
-* `touch .bowerrc` **-->** Make it in the ***root directory***!
-  - In the `.bowerrc` file put this text in:
+* `mkdir app`  
+
+* `touch .bowerrc` **-->** Make it in the ***root directory***!  
+
+* In the `.bowerrc` file put this text in:
   ```Javascript
   {
   "directory": "app/bower_components"
@@ -130,9 +132,11 @@
       },
     ```
 * Add to the `plugins` array:
-    ```Javascript
-      "karma-spec-reporter"
-    ```
+  ```Javascript
+
+    "karma-spec-reporter"
+    
+  ```
 * **More info at:** [https://github.com/mlex/karma-spec-reporter](https://github.com/mlex/karma-spec-reporter)
 
 
