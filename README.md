@@ -73,7 +73,10 @@
   ```
 * **More info at:**
   - [https://github.com/bcaudan/jasmine-spec-reporter/blob/master/README.md](https://github.com/bcaudan/jasmine-spec-reporter/blob/master/README.md)
-  - [https://github.com/bcaudan/jasmine-spec-reporter/blob/master/docs/protractor-configuration.md](https://github.com/bcaudan/jasmine-spec-reporter/blob/master/docs/protractor-configuration.md)
+  - [https://github.com/bcaudan/jasmine-spec-reporter/blob/master/docs/protractor-configuration.md](https://github.com/bcaudan/jasmine-spec-reporter/blob/master/docs/protractor-configuration.md)  
+
+
+* `protractor test/protractor.conf.js` **-->** runs the tests.
 
 ---
 
@@ -135,7 +138,7 @@
   ```Javascript
 
   "karma-spec-reporter"
-  
+
   ```
 * **More info at:** [https://github.com/mlex/karma-spec-reporter](https://github.com/mlex/karma-spec-reporter)
 
@@ -177,3 +180,8 @@
     mock.teardown();
   });
   ```
+
+##### *To run the karma and protractor tests make sure the following are running in different tabs of your terminal:*
+* `webdriver-manager start`  
+
+* In the app directory of your project, `http-server`
