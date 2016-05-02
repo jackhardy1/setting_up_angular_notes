@@ -1,12 +1,13 @@
 ## Setting up Angular with Protractor and Karma testing
 
-* `node -v` **-->** checks what version of node you have.
-  - If none is found then run `brew install node`.
-* `npm init` **-->** Sets up the `package.json` file, choose all of the default settings.
-* `npm install bower -g --save-dev` **-->** Installs bower.
-  - `--save-dev` saves it as a dependency in the `package.json` file.
-  - Sets up the `node modules` directory.
-* `bower init` **-->** Creates a `bower.json` file, choose all of the default settings.
+* `node -v` **-->** checks what version of node you have.  
+
+* If none is found then run `brew install node`.  
+* `npm init` **-->** Sets up the `package.json` file, choose all of the default settings.  
+
+* `npm install bower -g --save-dev` **-->** Installs bower and sets up the `node modules` directory.
+
+* `bower init` **-->** Creates a `bower.json` file, choose all of the default settings.  
 
 * `mkdir app`
 * `touch .bowerrc` **-->** Make it in the ***root directory***!
@@ -26,17 +27,24 @@
   ```
 ---
 ### Setting up Protractor:
-* Make sure [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) is installed.
-  - `java -version` is used to check.
-* `npm install -g protractor` **-->** installs Protractor globally.
-  - Installs `protractor` and `webdriver-manager`.
-  - Run `protractor --version` to check if it is working.
-* `webdriver-manager update` **-->** Downloads the necessary binaries.
-* `webdriver-manager start` **-->** Starts the server.
-* `http://localhost:4444/wd/hub` **-->** Shows you information about the status of the server.
+* Make sure [Java Development Kit (JDK)](http://www.oracle.com/technetwork/java/javase/downloads/index.html) is installed.  
+
+* `java -version` **-->** check what version you have.  
+
+* `npm install -g protractor` **-->** installs Protractor globally and `webdriver-manager`.  
+
+* Run `protractor --version` to check if it is working.  
+
+* `webdriver-manager update` **-->** Downloads the necessary binaries.  
+
+* `webdriver-manager start` **-->** Starts the server.  
+
+* `http://localhost:4444/wd/hub` **-->** Shows you information about the status of the server.  
+
 * `npm install --save-dev protractor` **-->** Adds it to the list of dependencies.
 
-* `mkdir test`
+* `mkdir test`  
+
 * `touch test/protractor.conf.js`
   - Add to the file:
   ```Javascript
@@ -47,12 +55,16 @@
     }
   ```
 
-* `npm install --save http-server`
-* `npm install http-server -g`
+* `npm install --save http-server`  
+
+* `npm install http-server -g`  
+
 * `http-server` **-->** Starts http-server.
 
-* `npm install jasmine-spec-reporter --save-dev` **-->** Installs colouring and better formatting for displaying the tests.
-  - Add to `protractor.conf.js` inside the `exports.config {}` hash:
+##### Adding colour and format to the protractor tests:
+* `npm install jasmine-spec-reporter --save-dev` **-->** Installs colouring and better formatting for displaying the tests.  
+
+* Add to `protractor.conf.js` inside the `exports.config {}` hash:
   ```Javascript
     onPrepare: function() {
       var SpecReporter = require('jasmine-spec-reporter');
@@ -66,14 +78,17 @@
 ---
 
 ### Setting up Karma
-* `npm install karma --save-dev`
-* `npm install karma-jasmine karma-chrome-launcher --save-dev`
-* `npm install jasmine-core --save-dev`
+* `npm install karma --save-dev`  
+
+* `npm install karma-jasmine karma-chrome-launcher --save-dev`  
+
+* `npm install jasmine-core --save-dev`  
+
 * `npm install -g karma-cli`
 * `bower install angular-mocks --save-dev`
 
-* Either run `karma init` or,
-  - run `touch test/karma.conf.js` and put in the file:
+* Either run `karma init` ***OR***,
+* Run `touch test/karma.conf.js` and put in the file:
   ```Javascript
     module.exports = function(config){
       config.set({
@@ -101,8 +116,10 @@
   };
   ```
 
-* `npm install karma-spec-reporter --save-dev` **-->** Installs colouring and better formatting for displaying the tests.
-  - Add to `karma.config.js` inside `config.set ({})` underneath `plugins`:
+##### Adding colour and format to the karma tests:
+* `npm install karma-spec-reporter --save-dev` **-->** Installs colouring and better formatting for displaying the tests.  
+
+* Add to `karma.config.js` inside `config.set ({})` underneath `plugins`:
     ```Javascript
     reporters: ["spec"],
       specReporter: {
@@ -114,11 +131,11 @@
         showSpecTiming: false
       },
     ```
-  - Add to the `plugins` array:
-    ```
+* Add to the `plugins` array:
+    ```Javascript
       "karma-spec-reporter"
     ```
-* More info at:  [https://github.com/mlex/karma-spec-reporter](https://github.com/mlex/karma-spec-reporter)
+* **More info at:** [https://github.com/mlex/karma-spec-reporter](https://github.com/mlex/karma-spec-reporter)
 
 
 * `karma start test/karma.conf.js` **-->** Runs the tests.
@@ -126,9 +143,10 @@
 ---
 
 ### Setting up protractor-http-mock
-* `npm install protractor-http-mock --save-dev`
+* `npm install protractor-http-mock --save-dev`  
+
 * Add to `protractor.conf.js` inside `exports.config = {}` underneath `baseUrl`:
-  ```
+  ```Javascript
   onPrepare: function(){
     require('protractor-http-mock').config = {
       rootDirectory: process.cwd(),
