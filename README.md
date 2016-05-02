@@ -133,9 +133,7 @@
     ```
 * Add to the `plugins` array:
   ```Javascript
-
-    "karma-spec-reporter"
-    
+  "karma-spec-reporter"
   ```
 * **More info at:** [https://github.com/mlex/karma-spec-reporter](https://github.com/mlex/karma-spec-reporter)
 
