@@ -23,7 +23,7 @@
 
 * `touch .gitignore` and add this to the file:
   ```
-  mode_modules
+  node_modules
   app/bower_components
   ```
 ---
